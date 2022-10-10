@@ -25,10 +25,11 @@
   </ng-template>
   </td> -->
   <td>{{analyse.type}}</td>
-  <td><button routerLink="MyFirstOne" mat-mini-fab color="primary" (click)="answering=!answering" >
+  <td><a [routerLink]="['./MyFirstOne', analyse._id]" color="primary" >
   <mat-icon>edit
   </mat-icon>
-</button></td>
+</a>
+{{analyse._id}}</td>
   <!-- <td>{{dessert.carbs}}</td>
   <td>{{dessert.protein}}</td> -->
 </tr>
@@ -36,6 +37,7 @@
 <br>
 </div>
 <ng-template #isg>
+  
 <button routerLink="/dashboard/answer" mat-mini-fab color="primary" (click)="answering=!answering" >
   <mat-icon>arrow_back
   </mat-icon></button>

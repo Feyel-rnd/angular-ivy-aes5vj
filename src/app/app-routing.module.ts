@@ -43,7 +43,7 @@ const routes: Routes = [
         canActivate: [ValidTokenGuard],
         children: [
           {
-            path: 'MyFirstOne', // child route path
+            path: 'MyFirstOne/:id', // child route path
             component: RadioButtonComponent, // child route component that the router renders
             canActivate: [ValidTokenGuard],
           },
@@ -86,7 +86,7 @@ const routes: Routes = [
   // { path: 'register-component', component: RegisterFormComponent },
   { path: 'create-account', component: SecondaryPageComponent },
   { path: 'check-page-component', component: CheckPageComponent },
-  { path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
+  // { path: '**', redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 // configures NgModule imports and exports
 @NgModule({
