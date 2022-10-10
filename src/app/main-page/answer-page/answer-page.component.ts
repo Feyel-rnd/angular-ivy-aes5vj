@@ -31,6 +31,7 @@ export class AnswerPageComponent implements OnInit {
   collection : any;
   current_id : string;
   analysis:Analysis[];
+  title : string;
   currentItem = 'Television';
   current_analysis :any;
 sortedData: Analysis[];
@@ -53,10 +54,11 @@ constructor(public router: Router) {
 
 AnalysisAnswer(id) {
 this.current_id = id;
-console.log(id)
+//console.log(id)
 this.collection.find({"_id":id}).then((value)=>{
-  console.log(value)
+  //console.log(value)
 this.current_analysis=value[0].fields
+this.title = value[0].name
 })
   this.answering=!this.answering
 }

@@ -41,8 +41,15 @@
 <button routerLink="/dashboard/answer" mat-mini-fab color="primary" (click)="answering=!answering" >
   <mat-icon>arrow_back
   </mat-icon></button><br><br>
+  <h1 class="text-center">{{title}}</h1>
    <div *ngFor="let champ of current_analysis"> <!--il faut distribuer les champs dans les bons components -->
     
     <app-radio-button [field]="champ"></app-radio-button>
   </div>
+  <input
+          type="submit"
+          class="fadeIn fourth"
+          value="Se connecter"
+          
+        />
 </ng-template>
