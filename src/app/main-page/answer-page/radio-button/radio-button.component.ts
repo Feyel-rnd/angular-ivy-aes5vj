@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { environment } from '../../../../environments/environment';
 
 
@@ -10,11 +11,14 @@ import { environment } from '../../../../environments/environment';
 export class RadioButtonComponent implements OnInit {
   favoriteSeason: string;
   seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
-
+  id : string;
   app = environment.application
-  constructor() { }
+  constructor(private _Activatedroute:ActivatedRoute) { }
 
   ngOnInit() {
+    this._Activatedroute.paramMap.subscribe(params => { 
+      this.id = params.get('id'); 
+  });
   }
 
 }
