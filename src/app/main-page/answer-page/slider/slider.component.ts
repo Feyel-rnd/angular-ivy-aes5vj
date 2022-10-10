@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
+  @Input() field :any;
   autoTicks = false;
   disabled = false;
   invert = false;
-  max = 100;
   min = 0;
-  showTicks = false;
+  showTicks = true;
   step = 1;
-  thumbLabel = false;
+  thumbLabel = true;
   value = 0;
   vertical = false;
   tickInterval = 1;
@@ -25,7 +25,9 @@ export class SliderComponent implements OnInit {
 
     return 0;
   }
-  constructor() { }
+  constructor() { 
+ 
+  }
 
   ngOnInit() {
   }

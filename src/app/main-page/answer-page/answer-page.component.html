@@ -1,19 +1,20 @@
 <div *ngIf="!answering; else isg">
-<h1 class="text-center font-weight-bold">Répondre à un questionnaire</h1> <br>
+  <h1 class="text-center font-weight-bold">Répondre à un questionnaire</h1>
+  <br />
 
-<table matSort  (matSortChange)="sortData($event)">
-<tr  >
-  <th  mat-sort-header="name" >Nom</th>
-  <!-- <th mat-sort-header="active">Etat</th> -->
-  <th mat-sort-header="type">Type</th>
-  <th mat-sort-header="actions">Actions</th>
-  <!-- <th mat-sort-header="carbs">Carbs (g)</th>
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="name">Nom</th>
+      <!-- <th mat-sort-header="active">Etat</th> -->
+      <th mat-sort-header="type">Type</th>
+      <th mat-sort-header="actions">Actions</th>
+      <!-- <th mat-sort-header="carbs">Carbs (g)</th>
   <th mat-sort-header="protein">Protein (g)</th> -->
-</tr>
+    </tr>
 
-<tr class="border" *ngFor="let analyse of sortedData">
-  <td>{{analyse.name}}</td>
-  <!-- <td><span *ngIf="analyse.active==true; else untrue">
+    <tr class="border" *ngFor="let analyse of sortedData">
+      <td>{{ analyse.name }}</td>
+      <!-- <td><span *ngIf="analyse.active==true; else untrue">
     <mat-chip-list>
       <mat-chip class="activechip">Active</mat-chip>
     </mat-chip-list>
@@ -24,33 +25,43 @@
 </mat-chip-list>
   </ng-template>
   </td> -->
-  <td>{{analyse.type}}</td>
-  <td><a [routerLink]="['./MyFirstOne', analyse._id.toString()]" color="primary" (click)="AnalysisAnswer(analyse._id)">
-  <mat-icon>edit
-  </mat-icon>
-</a>
-</td>
-  <!-- <td>{{dessert.carbs}}</td>
+      <td>{{ analyse.type }}</td>
+      <td>
+        <a
+          [routerLink]="['./MyFirstOne', analyse._id.toString()]"
+          color="primary"
+          (click)="AnalysisAnswer(analyse._id)"
+        >
+          <mat-icon>edit </mat-icon>
+        </a>
+      </td>
+      <!-- <td>{{dessert.carbs}}</td>
   <td>{{dessert.protein}}</td> -->
-</tr>
-</table>
-<br>
+    </tr>
+  </table>
+  <br />
 </div>
 <ng-template #isg>
-  
-<button routerLink="/dashboard/answer" mat-mini-fab color="primary" (click)="answering=!answering" >
-  <mat-icon>arrow_back
-  </mat-icon></button><br><br>
-  <h1 class="text-center">{{title}}</h1>
-   <div *ngFor="let champ of current_analysis"> <!--il faut distribuer les champs dans les bons components -->
-    
-    <app-radio-button [field]="champ"></app-radio-button>
-    <app-slider></app-slider>
+  <button
+    routerLink="/dashboard/answer"
+    mat-mini-fab
+    color="primary"
+    (click)="answering = !answering"
+  >
+    <mat-icon>arrow_back </mat-icon></button
+  ><br /><br />
+  <h1 class="text-center">{{ title }}</h1>
+  <div *ngFor="let champ of current_analysis">
+    <!--il faut distribuer les champs dans les bons components -->
+    <div *ngIf="champ.format.name == 'radio button'; else slider">
+      <app-radio-button [field]="champ"></app-radio-button>
+    </div>
+    <ng-template #slider
+      >
+      <div  *ngIf="champ.format.name == 'slider';else last"><app-slider  [field]="champ"></app-slider
+    ></div></ng-template>
+    <ng-template #last></ng-template>
+    <br>
   </div>
-  <input
-          type="submit"
-          class="fadeIn fourth"
-          value="Se connecter"
-          
-        />
+  <input type="submit" class="fadeIn fourth" value="Se connecter" />
 </ng-template>
