@@ -15,6 +15,7 @@ import { MyProfilePageComponent } from './my-profile-page/my-profile-page.compon
 import { MyAnalysisPageComponent } from './my-analysis-page/my-analysis-page.component';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { RadioButtonComponent } from './answer-page/radio-button/radio-button.component';
+import { SliderComponent } from './answer-page/slider/slider.component';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { RadioButtonComponent } from './answer-page/radio-button/radio-button.co
     MyProfilePageComponent,
     MyAnalysisPageComponent,
     SettingsPageComponent,
-    RadioButtonComponent
+    RadioButtonComponent,
+    SliderComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
