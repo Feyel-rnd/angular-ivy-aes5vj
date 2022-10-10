@@ -41,7 +41,7 @@
 <button routerLink="/dashboard/answer" mat-mini-fab color="primary" (click)="answering=!answering" >
   <mat-icon>arrow_back
   </mat-icon></button>
-  <div *ngFor="let analyse of sortedData">
-<app-radio-button [field]="analyse"></app-radio-button>
+   <div *ngFor="let champ of current_analysis"> <!--il faut distribuer les champs dans les bons components -->
+<app-radio-button [field]="champ"></app-radio-button>
   </div>
 </ng-template>
