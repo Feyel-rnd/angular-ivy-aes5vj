@@ -9,7 +9,7 @@ import { environment } from '../../../../environments/environment';
   styleUrls: ['./radio-button.component.css']
 })
 export class RadioButtonComponent implements OnInit {
-  @Input() item = ''
+  @Input() field :any;
   favoriteSeason: string;
   seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
   id : string;

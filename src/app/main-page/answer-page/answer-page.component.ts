@@ -29,10 +29,10 @@ export class AnswerPageComponent implements OnInit {
   user : any;
   mongo : any;
   collection : any;
-  
+  current_id : string;
   analysis:Analysis[];
   currentItem = 'Television';
-
+  current_analysis :any;
 sortedData: Analysis[];
 
 constructor(public router: Router) {
@@ -51,7 +51,13 @@ constructor(public router: Router) {
 }
 
 
+AnalysisAnswer(id) {
+this.current_id = id;
+this.collection.find({"_id":id}).then((value)=>{
 
+})
+  this.answering=!this.answering
+}
 sortData(sort: Sort) {
   
   const data = this.analysis.slice();

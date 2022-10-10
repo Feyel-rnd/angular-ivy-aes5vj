@@ -25,7 +25,7 @@
   </ng-template>
   </td> -->
   <td>{{analyse.type}}</td>
-  <td><a [routerLink]="['./MyFirstOne', analyse._id.toString()]" color="primary" (click)="answering=!answering">
+  <td><a [routerLink]="['./MyFirstOne', analyse._id.toString()]" color="primary" (click)="AnalysisAnswer(analyse._id.toString())">
   <mat-icon>edit
   </mat-icon>
 </a>
@@ -41,5 +41,7 @@
 <button routerLink="/dashboard/answer" mat-mini-fab color="primary" (click)="answering=!answering" >
   <mat-icon>arrow_back
   </mat-icon></button>
-<app-radio-button [item]="currentItem"></app-radio-button>
+  <div *ngFor="let analyse of sortedData">
+<app-radio-button [field]="analyse"></app-radio-button>
+  </div>
 </ng-template>
