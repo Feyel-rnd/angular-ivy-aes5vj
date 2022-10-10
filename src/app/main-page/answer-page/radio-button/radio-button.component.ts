@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../../environments/environment';
+
 
 @Component({
   selector: 'app-radio-button',
@@ -6,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./radio-button.component.css']
 })
 export class RadioButtonComponent implements OnInit {
+  favoriteSeason: string;
+  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
 
+  app = environment.application
   constructor() { }
 
   ngOnInit() {
