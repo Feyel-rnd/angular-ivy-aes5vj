@@ -1,3 +1,4 @@
+<div *ngIf="!answering; else isg">
 <h1 class="text-center font-weight-bold">Répondre à un questionnaire</h1> <br>
 
 <table matSort  (matSortChange)="sortData($event)">
@@ -24,7 +25,7 @@
   </ng-template>
   </td> -->
   <td>{{analyse.type}}</td>
-  <td><button routerLink="MyFirstOne" mat-mini-fab color="primary" >
+  <td><button routerLink="MyFirstOne" mat-mini-fab color="primary" (click)="answering=!answering" >
   <mat-icon>edit
   </mat-icon>
 </button></td>
@@ -33,4 +34,10 @@
 </tr>
 </table>
 <br>
+</div>
+<ng-template #isg>
+<button routerLink="/dashboard/answer" mat-mini-fab color="primary" (click)="answering=!answering" >
+  <mat-icon>arrow_back
+  </mat-icon></button>
 <router-outlet></router-outlet>
+</ng-template>

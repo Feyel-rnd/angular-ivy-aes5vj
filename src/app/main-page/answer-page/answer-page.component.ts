@@ -24,7 +24,7 @@ export interface Analysis{
 export class AnswerPageComponent implements OnInit {
   name2 = 'Angular';  
     
-
+  answering = false;
   app = environment.application
   user : any;
   mongo : any;
