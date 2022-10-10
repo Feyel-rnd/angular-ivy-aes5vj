@@ -7,7 +7,7 @@ import { environment } from '../../../environments/environment';
 
 
 export interface Analysis{
-  _id: any;
+  _id: string;
   type: string;
   active: boolean;
   name: string;

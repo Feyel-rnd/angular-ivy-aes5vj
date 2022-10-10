@@ -25,11 +25,11 @@
   </ng-template>
   </td> -->
   <td>{{analyse.type}}</td>
-  <td><a [routerLink]="['./MyFirstOne', analyse._id]" color="primary" >
+  <td><a [routerLink]="['./MyFirstOne', analyse._id.toString()]" color="primary" >
   <mat-icon>edit
   </mat-icon>
 </a>
-{{analyse._id}}</td>
+</td>
   <!-- <td>{{dessert.carbs}}</td>
   <td>{{dessert.protein}}</td> -->
 </tr>
