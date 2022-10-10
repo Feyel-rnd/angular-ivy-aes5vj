@@ -25,7 +25,7 @@
   </ng-template>
   </td> -->
   <td>{{analyse.type}}</td>
-  <td><a [routerLink]="['./MyFirstOne', analyse._id.toString()]" color="primary" (click)="AnalysisAnswer(analyse._id.toString())">
+  <td><a [routerLink]="['./MyFirstOne', analyse._id.toString()]" color="primary" (click)="AnalysisAnswer(analyse._id)">
   <mat-icon>edit
   </mat-icon>
 </a>
@@ -42,6 +42,7 @@
   <mat-icon>arrow_back
   </mat-icon></button>
    <div *ngFor="let champ of current_analysis"> <!--il faut distribuer les champs dans les bons components -->
-<app-radio-button [field]="champ"></app-radio-button>
+    {{champ.label}}
+    <app-radio-button [field]="champ"></app-radio-button>
   </div>
 </ng-template>

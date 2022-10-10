@@ -53,7 +53,9 @@ constructor(public router: Router) {
 
 AnalysisAnswer(id) {
 this.current_id = id;
+console.log(id)
 this.collection.find({"_id":id}).then((value)=>{
+  console.log(value)
 this.current_analysis=value[0].fields
 })
   this.answering=!this.answering
