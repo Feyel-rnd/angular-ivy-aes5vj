@@ -40,9 +40,9 @@
   
 <button routerLink="/dashboard/answer" mat-mini-fab color="primary" (click)="answering=!answering" >
   <mat-icon>arrow_back
-  </mat-icon></button>
+  </mat-icon></button><br><br>
    <div *ngFor="let champ of current_analysis"> <!--il faut distribuer les champs dans les bons components -->
-    {{champ.label}}
+    
     <app-radio-button [field]="champ"></app-radio-button>
   </div>
 </ng-template>
