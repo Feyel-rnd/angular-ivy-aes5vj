@@ -31,7 +31,7 @@ export class AnswerPageComponent implements OnInit {
   collection : any;
   
   analysis:Analysis[];
-
+  currentItem = 'Television';
 
 sortedData: Analysis[];
 
